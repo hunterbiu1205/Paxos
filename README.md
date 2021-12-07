@@ -1,2 +1,17 @@
 # Paxos-
-Welcome to the Suburbs Council Election! This year, Suburbs Council is holding elections for council president. Any member of its nine person council is eligible to become council president.  Member M1 – M1 has wanted to be council president for a very long time. M1 is very chatty over social media and responds to emails/texts/calls almost instantly. It is as if M1 has an in-brain connection with their mobile phone!  Member M2 – M2 has also wanted to be council president for a very long time, except their very long time is longer than everybody else's. M2 lives in a remote part of the Suburbs and thus their internet connection is really poor, almost non-existent. Responses to emails come in very late, and sometimes only to one of the emails in the email thread, so it is unclear whether M2 has read/understood them all. However, M2 sometimes likes to work at Café @ Bottom of the Hill. When that happens, their responses are instant and M2 replies to all emails.  Member M3 – M3 has also wanted to be council president. M3 is not as responsive as M1, nor as late as M2, however sometimes emails completely do not get to M3. The other councilors suspect that it’s because sometimes M3 goes on retreats in the woods at the top of the Suburbs, completely disconnected from the world.  Members M4-M9 have no particular ambitions about council presidency and no particular preferences or animosities, so they will try to vote fairly. Their jobs keep them fairly busy and as such their response times  will vary.  How does voting happen: On the day of the vote, one of the councilors will send out an email/message to all councilors with a proposal for a president. A majority (half+1) is required for somebody to be elected president.
+The class TestAll.java is employed to test the functionality of the PAXOS implementation based on the command line arguments.
+The command line arguments should comply to following requirements.
+
+Compile all java file first you can use: javac *.java
+
+1. Running without any set: java TestAll
+In default case when no arguments are provided, only 1 proposer will be emulated with 6 acceptors. Hence the acceptors will accept what the proposers propose.
+
+2. Running with set: java TestAll [-p number] [-t number] [-o number] Space between option and number
+
+When -p option is set which is short for the number of proposers and the maximum number of proposers is 3 which are M1 to M3. Case with the given number of proposers with 6 acceptors will be simulated.
+
+When the -t option is set, it means the response time from the acceptor. A random time delay between [0, number] exclusively will be set for each acceptor. And the maximum time delay is 10. When this option is not set, the default behaviour is immediate response from the acceptor.
+
+When the -o option is set, it means the number of off lines. The number should be between [0, 2]. Default case is no offline.
+[-o 2] means, both M2 and M3 will propose and then go offline.
